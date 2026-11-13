@@ -1,0 +1,11 @@
+# Blokir semua akses pengunjung melalui browser (HTTP/HTTPS) ke folder scripts
+# Folder ini hanya boleh dieksekusi secara internal melalui terminal / command line
+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    Order Deny,Allow
+    Deny from all
+</IfModule>
